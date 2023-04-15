@@ -21,5 +21,7 @@ public class XMLApp {
                 "</available>";
         Available available = (Available) xmlCodec.decodeObject(ontology, message);
         System.out.println(available);
+        String encoded = xmlCodec.encodeObject(ontology, available, true);
+        System.out.println(encoded);
     }
 }
