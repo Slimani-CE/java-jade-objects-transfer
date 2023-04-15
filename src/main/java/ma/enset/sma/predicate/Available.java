@@ -23,4 +23,12 @@ public class Available implements Predicate {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+    @Override
+    public String toString() {
+        return "Available{" +
+                "seller=" + seller +
+                ", product=" + product +
+                '}';
+    }
 }

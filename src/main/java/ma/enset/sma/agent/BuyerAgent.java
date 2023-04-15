@@ -29,7 +29,7 @@ public class BuyerAgent extends Agent {
         ACLMessage receivedMessage = blockingReceive(messageTemplate);
         try {
             Available available = (Available) getContentManager().extractContent(receivedMessage);
-            System.out.println("Product " + available.getProduct().getName() + " is available");
+            System.out.println(available);
         } catch (Codec.CodecException e) {
             throw new RuntimeException(e);
         } catch (OntologyException e) {

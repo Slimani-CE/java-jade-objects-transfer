@@ -6,6 +6,7 @@ import jade.content.onto.Ontology;
 import jade.content.onto.OntologyException;
 import jade.core.AID;
 import jade.core.Agent;
+import jade.core.security.SecurityHelper;
 import jade.lang.acl.ACLMessage;
 import ma.enset.sma.concept.Product;
 import ma.enset.sma.ontology.CatalogOntology;

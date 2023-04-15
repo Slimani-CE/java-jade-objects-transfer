@@ -2,6 +2,7 @@ package ma.enset.sma.agent;
 
 import jade.content.lang.Codec;
 import jade.content.lang.sl.SLCodec;
+import jade.content.lang.xml.XMLCodec;
 import jade.content.onto.Ontology;
 import jade.content.onto.OntologyException;
 import jade.core.AID;
@@ -14,13 +15,13 @@ import ma.enset.sma.predicate.Available;
 public class SellerAgentXML extends Agent {
 
     Ontology catalogOntology = CatalogOntology.getCatalogOntology();
-    private Codec codec = new SLCodec();
+    private XMLCodec xmlCodec = new XMLCodec();
     @Override
     protected void setup() {
         System.out.println("Seller agent started");
 
         getContentManager().registerOntology(catalogOntology);
-        getContentManager().registerLanguage(codec);
+        getContentManager().registerLanguage(xmlCodec);
 
         Product product = new Product();
         product.setName("SAMSUNG A30");
@@ -31,7 +32,7 @@ public class SellerAgentXML extends Agent {
         available.setSeller(getAID());
 
         ACLMessage message = new ACLMessage(ACLMessage.QUERY_IF);
-        message.setLanguage(codec.getName());
+        message.setLanguage(xmlCodec.getName());
         message.setOntology(catalogOntology.getName());
         message.addReceiver(new AID("buyer", AID.ISLOCALNAME));
         try {
